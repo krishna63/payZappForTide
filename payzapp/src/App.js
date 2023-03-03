@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      Hellow Tide
+      Hellow Tide whatever
     </div>
   );
 }
