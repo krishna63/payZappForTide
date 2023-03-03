@@ -1,8 +1,8 @@
-import { Grid, Paper } from "@mui/material";
+import { Grid, Paper, Button, Box } from "@mui/material";
 import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
+import ContactlessOutlinedIcon from '@mui/icons-material/ContactlessOutlined';
 import React from "react";
 import AppContext from "./AppContext";
-import Euro from "@mui/icons-material/Euro";
 import { styled } from '@mui/material/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -21,10 +21,14 @@ function TapToPay() {
                 <Grid item xs={6}>
                     <Item>
                         <b>Transaction Amount</b>
-                        <CurrencyPoundIcon size="small"/>{amount}
+                        <CurrencyPoundIcon size="small" />{amount}
                     </Item>
                 </Grid>
             </Grid>
+            <ContactlessOutlinedIcon sx={{ width: '100%', height: '200PX', margin: 'auto' }} />
+            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Button variant="outlined">Cancel</Button>
+            </Box>
         </>
     );
 }
