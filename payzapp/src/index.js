@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import Authenticate from './Authenticate';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: "/scanToPay",
         element: <ScanToPay/>,
       },
+      {
+        path: "/auth",
+        element: <Authenticate/>
+      }
     ],
   },
 ]);
