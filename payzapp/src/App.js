@@ -18,7 +18,7 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import AppContext from './AppContext';
-import HomeIcon from '@mui/icons-material/HomeOutlined';
+import PointOfSaleOutlined from '@mui/icons-material/PointOfSaleOutlined';
 import { Outlet,
   useLocation,
   useNavigate
@@ -82,7 +82,7 @@ function App() {
                 PayEazy
               </Typography>
               <IconButton color="primary" aria-label="home" component="home">
-                <HomeIcon/>
+                <PointOfSaleOutlined />
               </IconButton>
             </Toolbar>
           </AppBar>
