@@ -8,7 +8,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import TransactionAmount from "./TransactionAmount";
 
-
 function TapToPay() {
   const navigate = useNavigate();
   const handleCancel = () => {

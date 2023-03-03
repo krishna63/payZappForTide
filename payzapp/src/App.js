@@ -56,7 +56,11 @@ function App() {
     <React.Fragment>
       <AppContext.Provider value={appData}>
         <Box sx={{ flexGrow: 1}}>
-          <AppBar position="static">
+          <AppBar position="static"
+            style={{
+              backgroundColor: 'orange'
+            }}
+          >
             <Toolbar>
               <IconButton
                 size="large"

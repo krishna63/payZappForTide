@@ -3,7 +3,6 @@ import AppContext from "./AppContext";
 import {
   Paper,
 } from "@mui/material";
-import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
 
 function TransactionAmount() {
   const { amount } = useContext(AppContext);
