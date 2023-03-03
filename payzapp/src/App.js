@@ -1,5 +1,5 @@
 import './App.css';
-import * as React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -18,21 +18,44 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import AppContext from './AppContext';
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet,
+  useLocation,
+  useNavigate
+} from "react-router-dom";
 
 function App() {
   const { 
     pathname 
   } = useLocation();
 
+  const navigate = useNavigate();
+
+  const [purchaseAmount, setPurchaseAmount] = useState(0);
+
+  const handleChange = ({target}) => {
+    setPurchaseAmount(target.value);
+  }
+
+  const redirectToTapToPay = () => {
+    if (purchaseAmount > 0) {
+      navigate("/taptopay");
+    } else if (purchaseAmount === 0) {
+      
+    }
+  }
+
+  const redirectToScanToPay = () => {
+    navigate("/scantopay")
+  }
+
   const appData = {
     // sync with inout below
-    amount: 9.99
+    amount: purchaseAmount
   }
   return (
     <React.Fragment>
       <AppContext.Provider value={appData}>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1}}>
           <AppBar position="static">
             <Toolbar>
               <IconButton
@@ -51,16 +74,28 @@ function App() {
             </Toolbar>
           </AppBar>
           <Outlet />
-          {pathname==="/" && (<Card sx={{ minWidth: 275 }}>
+          {pathname === "/" && (<Card sx={{ minWidth: 275 }}>
             <CardContent>
-              <FormControl fullWidth sx={{ m: 1 }}>
+              <Box sx={{ m: 2, display: 'flex', flexDirection: 'column' }}>
                 <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-amount"
                   startAdornment={<InputAdornment position="start">$</InputAdornment>}
                   label="Amount"
+                  value={purchaseAmount}
+                  onChange={handleChange}
                 />
-              </FormControl>
+                <Box sx={{m: 2, alignSelf: 'center'}}>
+                  <Button variant="contained"
+                    onClick={redirectToTapToPay}
+                  >Tap to Pay</Button>
+                </Box>
+                <Box sx={{m: 1, alignSelf: 'center' }}>
+                  <Button variant="contained"
+                    onClick={redirectToScanToPay}
+                  >Scan to Pay</Button>
+                </Box>
+              </Box>
             </CardContent>
           </Card>)}
           <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
