@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Paper from '@mui/material/Paper';
-
+import { InputLabel, OutlinedInput, InputAdornment, FormControl } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -25,9 +25,13 @@ function App() {
     pathname 
   } = useLocation();
 
+  const appData = {
+    // sync with inout below
+    amount: 9.99
+  }
   return (
     <React.Fragment>
-      <AppContext.Provider value="Reed">
+      <AppContext.Provider value={appData}>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>
@@ -49,9 +53,14 @@ function App() {
           <Outlet />
           {pathname==="/" && (<Card sx={{ minWidth: 275 }}>
             <CardContent>
-              <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                Word of the Day
-              </Typography>
+              <FormControl fullWidth sx={{ m: 1 }}>
+                <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-amount"
+                  startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                  label="Amount"
+                />
+              </FormControl>
             </CardContent>
           </Card>)}
           <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
