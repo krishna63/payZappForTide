@@ -80,7 +80,7 @@ function App() {
                 <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-amount"
-                  startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                  startAdornment={<InputAdornment position="start">&#163;</InputAdornment>}
                   label="Amount"
                   value={purchaseAmount}
                   onChange={handleChange}
