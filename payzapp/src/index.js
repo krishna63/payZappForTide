@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Authenticate from './Authenticate';
+import TransactionSucess from './TransactionSucesses';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/auth",
         element: <Authenticate/>
+      },
+      {
+        path: "/success",
+        element: <TransactionSucess/>
       }
     ],
   },

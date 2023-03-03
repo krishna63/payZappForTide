@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Paper from '@mui/material/Paper';
-import { InputLabel, OutlinedInput, InputAdornment, FormControl } from '@mui/material';
+import { InputLabel, OutlinedInput, InputAdornment } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -18,6 +18,7 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import AppContext from './AppContext';
+import HomeIcon from '@mui/icons-material/HomeOutlined';
 import { Outlet,
   useLocation,
   useNavigate
@@ -52,6 +53,11 @@ function App() {
     // sync with inout below
     amount: purchaseAmount
   }
+
+  const redirectToHome = () => {
+    navigate("/");
+  }
+
   return (
     <React.Fragment>
       <AppContext.Provider value={appData}>
@@ -60,6 +66,7 @@ function App() {
             style={{
               backgroundColor: 'orange'
             }}
+            onClick={redirectToHome}
           >
             <Toolbar>
               <IconButton
@@ -74,7 +81,9 @@ function App() {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 PayEazy
               </Typography>
-              <Button color="inherit">Login</Button>
+              <IconButton color="primary" aria-label="home" component="home">
+                <HomeIcon/>
+              </IconButton>
             </Toolbar>
           </AppBar>
           <Outlet />
