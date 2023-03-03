@@ -18,9 +18,13 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 function App() {
+  const { 
+    pathname 
+  } = useLocation();
+
   return (
     <React.Fragment>
       <Box sx={{ flexGrow: 1 }}>
@@ -42,13 +46,15 @@ function App() {
           </Toolbar>
         </AppBar>
         <Outlet />
-        <Card sx={{ minWidth: 275 }}>
-          <CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-              Word of the Day
-            </Typography>
-          </CardContent>
-        </Card>
+        {pathname === "/" && 
+          <Card sx={{ minWidth: 275 }}>
+            <CardContent>
+              <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                Word of the Day
+              </Typography>
+            </CardContent>
+          </Card>
+        }
         <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
           <BottomNavigation
             showLabels
