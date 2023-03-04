@@ -24,10 +24,11 @@ function ScanToPay() {
       padding: "54px"
     }}>
       <TransactionAmount />
+      <h1 style={{color: '#1976d2'}}>Scan to Pay</h1>
       <IconButton color="primary" aria-label="upload picture" component="label"
         onClick={goToCred}
       >
-        <QrCodeIcon sx={{ width: '100%', height: '200px', margin: 'auto' }} 
+        <QrCodeIcon sx={{ width: '100%', height: '200px', margin: 'auto', color: 'black' }} 
         />
       </IconButton>
       <Button variant="outlined"
