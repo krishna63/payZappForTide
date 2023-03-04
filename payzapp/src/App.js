@@ -81,9 +81,7 @@ function App() {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 PayEazy
               </Typography>
-              <IconButton color="primary" aria-label="home" component="home">
                 <PointOfSaleOutlined />
-              </IconButton>
             </Toolbar>
           </AppBar>
           <Outlet />
