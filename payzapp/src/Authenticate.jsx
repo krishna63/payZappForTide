@@ -24,7 +24,6 @@ function Authenticate() {
           margin: '20px 0'
         }}
         type="password"
-        maxlength="4"
       />
       <p><b>or</b></p>
       <Button variant="outlined"
