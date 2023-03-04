@@ -29,15 +29,16 @@ function TapToPay() {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log("Success:", data);
+                        navigate("/success");
                     })
                     .catch((error) => {
                         console.error("Error:", error);
                     });
-            }, 5000)
+            }, 3000)
         } else {
             setTimeout(() => {
                 navigate('/auth');
-            }, 5000);
+            }, 3000);
         }
     }, [])
     return (

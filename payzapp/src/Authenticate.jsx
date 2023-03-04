@@ -8,7 +8,9 @@ function Authenticate() {
   const navigate = useNavigate();
 
   const redirectToSucess = () => {
-    navigate("/success");
+    setTimeout(() => {
+      navigate("/success");
+    }, 3000)
   }
 
   return (
