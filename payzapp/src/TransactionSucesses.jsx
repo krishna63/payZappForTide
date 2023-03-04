@@ -38,9 +38,9 @@ function TransactionSucess() {
           width: "75%",
         }}
       >
-        <ShareOutlinedIcon sx={{ ...iconSize }} />
-        <DownloadForOfflineOutlinedIcon sx={{ ...iconSize }} />
         <SmsOutlinedIcon sx={{ ...iconSize }} />
+        <DownloadForOfflineOutlinedIcon sx={{ ...iconSize }} />
+        <ShareOutlinedIcon sx={{ ...iconSize }} />
       </div>
     </Box>
   );

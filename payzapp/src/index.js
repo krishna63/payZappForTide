@@ -11,6 +11,7 @@ import {
 import reportWebVitals from './reportWebVitals';
 import Authenticate from './Authenticate';
 import TransactionSucess from './TransactionSucesses';
+import Reports from './Reports';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/success",
         element: <TransactionSucess/>
+      },
+      {
+        path: "/reports",
+        element: <Reports />
       }
     ],
   },

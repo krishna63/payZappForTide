@@ -1,3 +1,2 @@
-const trx_data = {
-};
+const trx_data = []
 module.exports = trx_data;
