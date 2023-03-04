@@ -20,7 +20,7 @@ const Reports = () => {
     }, []);
     const trxData = trx_data.map(trx => {
         return (
-            <>
+            <React.Fragment key={v4()}>
                 <ListItem key={v4()}>
                     <ListItemButton key={v4()} sx={{flexDirection: 'column',
 alignItems: 'flex-start'}}>
@@ -30,7 +30,7 @@ alignItems: 'flex-start'}}>
                     </ListItemButton>
                 </ListItem>
                 <Divider />
-            </>
+            </React.Fragment>
         )
     })
     return (
