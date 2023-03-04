@@ -14,7 +14,7 @@ function ScanToPay() {
     navigate("/");
   }
   const goToCred = () => {
-    navigate("/auth");
+    navigate("/success");
   }
   return (
     <Box sx={{
