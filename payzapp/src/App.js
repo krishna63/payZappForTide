@@ -117,9 +117,8 @@ function App() {
                 //setValue(newValue);
               }}
             >
-              <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-              <BottomNavigationAction label="Payments" icon={<ReceiptIcon />} />
-              <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+              <BottomNavigationAction label="Recents" icon={<RestoreIcon />} onClick={() => navigate('/reports')} />
+              <BottomNavigationAction label="Payments" icon={<ReceiptIcon />} onClick={() => navigate('/reports')} />
             </BottomNavigation>
           </Paper>
         </Box>
