@@ -48,6 +48,7 @@ function TapToPay() {
             padding: "54px"
         }}>
             <TransactionAmount />
+            <h1 style={{color: 'blue'}}>Tap to Pay</h1>
             <ContactlessOutlinedIcon sx={{ width: '100%', height: '200px', margin: 'auto' }} />
             <Button variant="outlined"
                 onClick={handleCancel}
